@@ -2,6 +2,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    private var dataManager = DishDataManager()
+    
     private lazy var mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -33,7 +35,8 @@ extension MainViewController {
 //MARK: Notification
 extension MainViewController {
     @objc private func getNetworkData(_ notification: Notification) {
-        let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes
+        guard let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes else { return }
+        dataManager.addData(from: data)
     }
 }
 

@@ -1,5 +1,9 @@
 import Foundation
 
 struct DataBody: Decodable {
-    let body: [SideDishes]
+    var body = [SideDishes]()
+    
+    mutating func append(_ data: SideDishes) {
+        body.append(data)
+    }
 }

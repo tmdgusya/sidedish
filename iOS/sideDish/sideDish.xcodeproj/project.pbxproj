@@ -12,6 +12,7 @@
 		7181260326368F4A0040E176 /* SideDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181260226368F4A0040E176 /* SideDishes.swift */; };
 		7181260826368F690040E176 /* DataBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181260726368F690040E176 /* DataBody.swift */; };
 		7181260E263690090040E176 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7181260D263690090040E176 /* Alamofire */; };
+		718126142636983D0040E176 /* DishDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718126132636983D0040E176 /* DishDataManager.swift */; };
 		719B37B3262E781C00107FE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37B2262E781C00107FE6 /* AppDelegate.swift */; };
 		719B37B5262E781C00107FE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37B4262E781C00107FE6 /* SceneDelegate.swift */; };
 		719B37B7262E781C00107FE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37B6262E781C00107FE6 /* MainViewController.swift */; };
@@ -86,6 +87,7 @@
 		718125FA26368F320040E176 /* SideDish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDish.swift; sourceTree = "<group>"; };
 		7181260226368F4A0040E176 /* SideDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishes.swift; sourceTree = "<group>"; };
 		7181260726368F690040E176 /* DataBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBody.swift; sourceTree = "<group>"; };
+		718126132636983D0040E176 /* DishDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDataManager.swift; sourceTree = "<group>"; };
 		719B37AF262E781C00107FE6 /* sideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719B37B2262E781C00107FE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719B37B4262E781C00107FE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				718125FA26368F320040E176 /* SideDish.swift */,
 				7181260226368F4A0040E176 /* SideDishes.swift */,
 				7181260726368F690040E176 /* DataBody.swift */,
+				718126132636983D0040E176 /* DishDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				718125FB26368F320040E176 /* SideDish.swift in Sources */,
 				719B37B3262E781C00107FE6 /* AppDelegate.swift in Sources */,
 				71A833E5262FEA3D0060C4B4 /* EventInfoStackView.swift in Sources */,
+				718126142636983D0040E176 /* DishDataManager.swift in Sources */,
 				718125F226368E990040E176 /* NetworkManager.swift in Sources */,
 				719B37F7262E7AF900107FE6 /* FoodCell.swift in Sources */,
 				719B37B5262E781C00107FE6 /* SceneDelegate.swift in Sources */,
