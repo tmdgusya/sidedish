@@ -29,7 +29,6 @@ class MainViewController: UIViewController {
 extension MainViewController {
     private func addNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(newData), name: .newData, object: nil)
     }
 }
 
@@ -38,9 +37,6 @@ extension MainViewController {
     @objc private func getNetworkData(_ notification: Notification) {
         guard let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes else { return }
         dataManager.addData(from: data)
-        mainCollectionView.reloadData()
-    }
-    @objc private func newData() {
         mainCollectionView.reloadData()
     }
 }

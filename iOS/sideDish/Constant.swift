@@ -24,5 +24,4 @@ enum KeyValue {
 
 extension Notification.Name {
     static let fetchData = Notification.Name("fetchData")
-    static let newData = Notification.Name("newData")
 }
