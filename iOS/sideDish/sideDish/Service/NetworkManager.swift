@@ -15,7 +15,7 @@ class NetworkManager {
                 
                 guard let data = response.value else { return }
                 
-                DispatchQueue.global().async {
+                DispatchQueue.main.async {
                     let dataBody = data.body
                     dataBody.forEach { eachData in
                         let categoryID = eachData.categoryID

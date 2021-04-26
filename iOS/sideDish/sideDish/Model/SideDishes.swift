@@ -10,4 +10,12 @@ struct SideDishes: Decodable {
         case name
         case items
     }
+    
+    func count() -> Int {
+        return items.count
+    }
+    
+    func eachDish(_ row:Int) -> SideDish {
+        return items[row]
+    }
 }

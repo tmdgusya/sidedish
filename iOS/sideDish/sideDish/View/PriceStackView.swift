@@ -4,6 +4,7 @@ class PriceStackView: UIStackView {
     
     var normalPriceLabel: UILabel!
     var eventPriceLabel: UILabel?
+    private var peddingView: UIView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +40,8 @@ extension PriceStackView {
         addArrangedSubview(normalPriceLabel)
         normalPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         normalPriceLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        normalPriceLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        peddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        addArrangedSubview(peddingView!)
     }
     
     private func configureEventPriceLabel() {
@@ -50,7 +52,8 @@ extension PriceStackView {
         addArrangedSubview(eventPriceLabel)
         eventPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         eventPriceLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        eventPriceLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        peddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        addArrangedSubview(peddingView!)
     }
     
     static func convertToNSAttributedString(from string: String) -> NSAttributedString {

@@ -29,14 +29,19 @@ class MainViewController: UIViewController {
 extension MainViewController {
     private func addNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(newData), name: .newData, object: nil)
     }
 }
 
-//MARK: Notification
+//MARK: @Action
 extension MainViewController {
     @objc private func getNetworkData(_ notification: Notification) {
         guard let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes else { return }
         dataManager.addData(from: data)
+        mainCollectionView.reloadData()
+    }
+    @objc private func newData() {
+        mainCollectionView.reloadData()
     }
 }
 
@@ -66,21 +71,49 @@ private extension MainViewController {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5 // test code
+        return dataManager.sectionCount(section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else { return UICollectionViewCell() }
-        //Start TestCode
-        let attributedText = PriceStackView.convertToNSAttributedString(from: "7,880원")
-        cell.foodImageView.image = UIImage(named: "side")
-        cell.foodInfoStackView.foodNameLabel.text = "[마샐미디쉬] 매콤마늘쫑 해산물볶음 180G"
-        cell.foodInfoStackView.foodDescriptionLabel.text = "탱글탱글한 새우와 오징어를 .."
-        cell.foodInfoStackView.priceStackView.normalPriceLabel.text = "6,210원"
-        cell.foodInfoStackView.priceStackView.eventPriceLabel?.attributedText = attributedText
-        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = "이벤트 특가"
-        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = "런칭특가"
-        //End TestCode
+        let sideDish = dataManager.eachData(indexPath.section, indexPath.row)
+        
+        guard let url = URL(string: sideDish.image) else {
+            return UICollectionViewCell()
+        }
+        
+        var dishImage: UIImage?
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data, let image = UIImage(data: data) {
+                    dishImage = image
+                }
+            }
+        }.resume()
+        
+        
+        DispatchQueue.main.async {
+            if let image = dishImage{
+                cell.foodImageView.image = image
+            } else {
+                cell.foodImageView.image = UIImage(named: "side")
+            }
+            cell.foodInfoStackView.foodNameLabel.text = sideDish.title
+            cell.foodInfoStackView.foodDescriptionLabel.text = sideDish.description
+            cell.foodInfoStackView.priceStackView.normalPriceLabel.text = sideDish.sPrice
+            if let nPrice = sideDish.nPrice {
+                cell.foodInfoStackView.priceStackView.eventPriceLabel?.attributedText = PriceStackView.convertToNSAttributedString(from: nPrice)
+            }
+            if let eventPrice = sideDish.badge {
+                eventPrice.forEach { badge in
+                    if badge == "이벤트특가" {
+                        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = badge
+                    } else {
+                        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = badge
+                    }
+                }
+            }
+        }
         return cell
     }
     
@@ -93,7 +126,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -104,18 +137,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if kind == UICollectionView.elementKindSectionHeader
         {
-            if indexPath.section == 0
-            {
-                header.headerLabel.text = HeaderInfo.main
-            }
-            else if indexPath.section == 1
-            {
-                header.headerLabel.text = HeaderInfo.soup
-            }
-            else
-            {
-                header.headerLabel.text = HeaderInfo.side
-            }
+            header.headerLabel.text = HeaderInfoList.infoList[indexPath.section]
         }
         return header
     }
