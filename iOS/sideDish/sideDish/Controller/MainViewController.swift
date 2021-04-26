@@ -33,7 +33,7 @@ extension MainViewController {
 //MARK: Notification
 extension MainViewController {
     @objc private func getNetworkData(_ notification: Notification) {
-        
+        let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes
     }
 }
 

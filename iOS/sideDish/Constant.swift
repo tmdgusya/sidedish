@@ -11,6 +11,10 @@ enum HeaderInfo {
     static let side = "식탁을 풍성하게 하는 정갈한 밑반찬"
 }
 
+enum KeyValue {
+    static let sideDishes = "sideDishes"
+}
+
 extension Notification.Name {
     static let fetchData = Notification.Name("fetchData")
 }

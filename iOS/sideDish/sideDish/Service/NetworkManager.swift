@@ -16,7 +16,14 @@ class NetworkManager {
                 guard let data = response.value else { return }
                 
                 DispatchQueue.global().async {
-                    NotificationCenter.default.post(name: .fetchData, object: self, userInfo: ["data":data])
+                    let dataBody = data.body
+                    dataBody.forEach { eachData in
+                        let categoryID = eachData.categoryID
+                        let name = eachData.name
+                        let items = eachData.items
+                        let decodedData = SideDishes(categoryID: categoryID, name: name, items: items)
+                        NotificationCenter.default.post(name: .fetchData, object: self, userInfo: [KeyValue.sideDishes:decodedData])
+                    }
                 }
                 
             }
