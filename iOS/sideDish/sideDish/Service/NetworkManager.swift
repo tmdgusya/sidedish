@@ -15,12 +15,11 @@ class NetworkManager {
                 
                 guard let data = response.value else { return }
                 
-                //test code
-                print(data.body[0].categoryID)
-                print(type(of: data.body[0]))
+                DispatchQueue.global().async {
+                    NotificationCenter.default.post(name: .fetchData, object: self, userInfo: ["data":data])
+                }
                 
             }
-
     }
 }
 

@@ -19,6 +19,21 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setupMainCollectionView()
         NetworkManager.fetchSideDishData()
+        addNotificationCenter()
+    }
+}
+
+//MARK: Notification
+extension MainViewController {
+    private func addNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
+    }
+}
+
+//MARK: Notification
+extension MainViewController {
+    @objc private func getNetworkData(_ notification: Notification) {
+        
     }
 }
 
