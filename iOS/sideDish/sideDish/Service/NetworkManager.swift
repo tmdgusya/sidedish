@@ -25,7 +25,6 @@ class NetworkManager {
                         NotificationCenter.default.post(name: .fetchData, object: self, userInfo: [KeyValue.sideDishes:decodedData])
                     }
                 }
-                
             }
     }
 }

@@ -8,11 +8,21 @@ class FoodCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupFoodCell()
+        setupTapGesture()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupFoodCell()
+        setupTapGesture()
+    }
+    
+    private func setupTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapSectionHeader(_:)))
+        addGestureRecognizer(gesture)
+    }
+    @objc private func didTapSectionHeader(_ gesture: UITapGestureRecognizer) {
+        //Detail ViewController로 연결
     }
 }
 
