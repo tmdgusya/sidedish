@@ -2,7 +2,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class DetailViewController: UICollectionViewController, DetailHashDelegate {
+class DetailViewController: UICollectionViewController {
     
     private var detailhash: String!
 
@@ -10,10 +10,6 @@ class DetailViewController: UICollectionViewController, DetailHashDelegate {
         super.viewDidLoad()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         setupMainView()
-    }
-    
-    func deliveryData(_ hashData: String) {
-        detailhash = hashData
     }
     
     private func setupMainView() {

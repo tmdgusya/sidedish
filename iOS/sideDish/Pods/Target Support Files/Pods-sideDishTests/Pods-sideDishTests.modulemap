@@ -1,0 +1,6 @@
+framework module Pods_sideDishTests {
+  umbrella header "Pods-sideDishTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

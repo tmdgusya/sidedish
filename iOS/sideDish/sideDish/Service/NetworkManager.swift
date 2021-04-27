@@ -18,10 +18,10 @@ class NetworkManager {
                 DispatchQueue.main.async {
                     let dataBody = data.body
                     dataBody.forEach { eachData in
-                        let categoryID = eachData.categoryID
-                        let name = eachData.name
-                        let items = eachData.items
-                        let decodedData = SideDishes(categoryID: categoryID, name: name, items: items)
+                        let decodedData = SideDishes()
+                        decodedData.categoryID = eachData.categoryID
+                        decodedData.name = eachData.name
+                        decodedData.items = eachData.items
                         NotificationCenter.default.post(name: .fetchData, object: self, userInfo: [KeyValue.sideDishes:decodedData])
                     }
                 }

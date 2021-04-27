@@ -1,9 +1,11 @@
 import Foundation
+import RealmSwift
 
-struct DataBody: Decodable {
-    var body = [SideDishes]()
+class DataBody: Decodable {
     
-    mutating func append(_ data: SideDishes) {
+    var body: List<SideDishes> = List<SideDishes>()
+    
+    func append(_ data: SideDishes) {
         body.append(data)
     }
     

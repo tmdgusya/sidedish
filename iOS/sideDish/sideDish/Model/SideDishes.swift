@@ -1,9 +1,10 @@
 import Foundation
+import RealmSwift
 
-struct SideDishes: Decodable {
-    let categoryID: String
-    let name: String
-    let items: [SideDish]
+class SideDishes: Object, Decodable {
+    @objc dynamic var categoryID: String = ""
+    @objc dynamic var name: String = ""
+    var items: List<SideDish> = List<SideDish>()
     
     enum CodingKeys: String, CodingKey {
         case categoryID = "category_id"

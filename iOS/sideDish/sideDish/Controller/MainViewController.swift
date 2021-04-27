@@ -1,16 +1,10 @@
 import UIKit
-
-protocol DetailHashDelegate: class {
-    
-    func deliveryData(_ hashData: String)
-    
-}
+import RealmSwift
 
 class MainViewController: UIViewController {
     
     private var dataManager = DishDataManager()
-    weak var delegate: DetailHashDelegate?
-    
+
     private lazy var mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -30,6 +24,8 @@ class MainViewController: UIViewController {
         NetworkManager.fetchSideDishData()
         addNotificationCenter()
     }
+
+    
 }
 
 //MARK: Notification
@@ -45,7 +41,15 @@ extension MainViewController {
     
     @objc private func getNetworkData(_ notification: Notification) {
         guard let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes else { return }
-        dataManager.addData(from: data)
+        let realm = try! Realm()
+        let dish = SideDishes()
+        dish.categoryID = data.categoryID
+        dish.name = data.name
+        dish.items.append(objectsIn: data.items)
+        
+        try! realm.write {
+            realm.add(dish)
+        }
         mainCollectionView.reloadData()
     }
     
@@ -53,8 +57,7 @@ extension MainViewController {
         let location = notification.userInfo?["location"] as! CGPoint
         guard let indexPath = self.mainCollectionView.indexPathForItem(at: location) else { return }
         let data = dataManager.eachData(indexPath.section, indexPath.row)
-        let hash = data.detailHash
-        delegate?.deliveryData(hash)
+        let hash = data.detailHash // UnusedCode
         let layout = UICollectionViewFlowLayout()
         let detailVC = DetailViewController(collectionViewLayout: layout)
         detailVC.modalPresentationStyle = .overCurrentContext
@@ -93,44 +96,40 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else { return UICollectionViewCell() }
-        let sideDish = dataManager.eachData(indexPath.section, indexPath.row)
-        
-        guard let url = URL(string: sideDish.image) else {
-            return UICollectionViewCell()
-        }
-        
-        var dishImage: UIImage?
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.async {
-                if let data = data, let image = UIImage(data: data) {
-                    dishImage = image
-                }
-            }
-        }.resume()
-        
-        
-        DispatchQueue.main.async {
-            if let image = dishImage{
-                cell.foodImageView.image = image
-            } else {
-                cell.foodImageView.image = UIImage(named: "side")
-            }
-            cell.foodInfoStackView.foodNameLabel.text = sideDish.title
-            cell.foodInfoStackView.foodDescriptionLabel.text = sideDish.description
-            cell.foodInfoStackView.priceStackView.normalPriceLabel.text = sideDish.sPrice
-            if let nPrice = sideDish.nPrice {
-                cell.foodInfoStackView.priceStackView.eventPriceLabel?.attributedText = PriceStackView.convertToNSAttributedString(from: nPrice)
-            }
-            if let eventPrice = sideDish.badge {
-                eventPrice.forEach { badge in
-                    if badge == "이벤트특가" {
-                        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = badge
-                    } else {
-                        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = badge
-                    }
-                }
-            }
-        }
+//        let sideDish = dataManager.eachData(indexPath.section, indexPath.row)
+//
+//        guard let url = URL(string: sideDish.image) else {
+//            return UICollectionViewCell()
+//        }
+//
+//        var dishImage: UIImage?
+//        URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            DispatchQueue.main.async {
+//                if let data = data, let image = UIImage(data: data) {
+//                    dishImage = image
+//                }
+//            }
+//        }.resume()
+//
+//
+//        DispatchQueue.main.async {
+//            if let image = dishImage{
+//                cell.foodImageView.image = image
+//            } else {
+//                cell.foodImageView.image = UIImage(named: "side")
+//            }
+//            cell.foodInfoStackView.foodNameLabel.text = sideDish.title
+//            cell.foodInfoStackView.foodDescriptionLabel.text = sideDish.description
+//            cell.foodInfoStackView.priceStackView.normalPriceLabel.text = sideDish.sPrice
+//            cell.foodInfoStackView.priceStackView.eventPriceLabel?.attributedText = PriceStackView.convertToNSAttributedString(from: sideDish.nPrice)
+//            sideDish.badge.forEach { badge in
+//                    if badge == "이벤트특가" {
+//                        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = badge
+//                    } else {
+//                        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = badge
+//                    }
+//                }
+//        }
         return cell
     }
     
