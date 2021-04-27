@@ -22,7 +22,8 @@ class FoodCell: UICollectionViewCell {
         addGestureRecognizer(gesture)
     }
     @objc private func didTapSectionHeader(_ gesture: UITapGestureRecognizer) {
-        //Detail ViewController로 연결
+        NotificationCenter.default.post(name: .nextVC, object: self)
+        
     }
 }
 

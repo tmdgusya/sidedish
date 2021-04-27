@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
 extension MainViewController {
     private func addNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(moveToDetailViewController), name: .nextVC, object: nil)
     }
 }
 
@@ -38,6 +39,12 @@ extension MainViewController {
         guard let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes else { return }
         dataManager.addData(from: data)
         mainCollectionView.reloadData()
+    }
+    @objc private func moveToDetailViewController() {
+        let layout = UICollectionViewFlowLayout()
+        let detailVC = DetailViewController(collectionViewLayout: layout)
+        detailVC.modalPresentationStyle = .fullScreen
+        self.present(detailVC, animated: true, completion: nil)
     }
 }
 
