@@ -19,4 +19,8 @@ class SideDishes: Object, Decodable {
     func eachDish(_ row:Int) -> SideDish {
         return items[row]
     }
+    
+    override static func primaryKey() -> String? {
+        return "categoryID"
+    }
 }

@@ -23,4 +23,7 @@ class SideDish: Object, Decodable {
         case sPrice = "s_price"
         case badge
     }
+    override static func primaryKey() -> String? {
+        return "detailHash"
+    }
 }

@@ -46,9 +46,8 @@ extension MainViewController {
         dish.categoryID = data.categoryID
         dish.name = data.name
         dish.items.append(objectsIn: data.items)
-        
         try! realm.write {
-            realm.add(dish)
+            realm.add(dish, update: .all)
         }
         mainCollectionView.reloadData()
     }
