@@ -2,11 +2,22 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class DetailViewController: UICollectionViewController {
+class DetailViewController: UICollectionViewController, DetailHashDelegate {
+    
+    private var detailhash: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        setupMainView()
+    }
+    
+    func deliveryData(_ hashData: String) {
+        detailhash = hashData
+    }
+    
+    private func setupMainView() {
+        self.collectionView.backgroundColor = UIColor.white
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

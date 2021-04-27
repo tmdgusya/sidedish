@@ -1,8 +1,15 @@
 import UIKit
 
+protocol DetailHashDelegate: class {
+    
+    func deliveryData(_ hashData: String)
+    
+}
+
 class MainViewController: UIViewController {
     
     private var dataManager = DishDataManager()
+    weak var delegate: DetailHashDelegate?
     
     private lazy var mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -29,21 +36,28 @@ class MainViewController: UIViewController {
 extension MainViewController {
     private func addNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(moveToDetailViewController), name: .nextVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(moveToDetailViewController(_:)), name: .nextVC, object: nil)
     }
 }
 
 //MARK: @Action
 extension MainViewController {
+    
     @objc private func getNetworkData(_ notification: Notification) {
         guard let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes else { return }
         dataManager.addData(from: data)
         mainCollectionView.reloadData()
     }
-    @objc private func moveToDetailViewController() {
+    
+    @objc private func moveToDetailViewController(_ notification: Notification) {
+        let location = notification.userInfo?["location"] as! CGPoint
+        guard let indexPath = self.mainCollectionView.indexPathForItem(at: location) else { return }
+        let data = dataManager.eachData(indexPath.section, indexPath.row)
+        let hash = data.detailHash
+        delegate?.deliveryData(hash)
         let layout = UICollectionViewFlowLayout()
         let detailVC = DetailViewController(collectionViewLayout: layout)
-        detailVC.modalPresentationStyle = .fullScreen
+        detailVC.modalPresentationStyle = .overCurrentContext
         self.present(detailVC, animated: true, completion: nil)
     }
 }
