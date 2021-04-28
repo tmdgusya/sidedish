@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		1A6B849BB6456393A413F0C0 /* Pods_sideDishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7072771273CF1AAD09C84075 /* Pods_sideDishTests.framework */; };
 		26861CBA006F9F561FCC81C3 /* Pods_sideDish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25E8B0B91AA42C8CDE2B2F1 /* Pods_sideDish.framework */; };
 		42DB5446FF9DDC96686D1E43 /* Pods_sideDish_sideDishUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE81E2F2E2D48948B017C9FD /* Pods_sideDish_sideDishUITests.framework */; };
 		710EDB91263940CF00528CFA /* DetailFoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710EDB90263940CF00528CFA /* DetailFoodInfo.swift */; };
 		710EDB962639491B00528CFA /* DetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710EDB952639491B00528CFA /* DetailData.swift */; };
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 		718125F226368E990040E176 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718125F126368E990040E176 /* NetworkManager.swift */; };
 		718125FB26368F320040E176 /* SideDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718125FA26368F320040E176 /* SideDish.swift */; };
 		7181260326368F4A0040E176 /* SideDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181260226368F4A0040E176 /* SideDishes.swift */; };
@@ -92,7 +89,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		00045BFC5498283901AAFA68 /* Pods-sideDish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish.debug.xcconfig"; path = "Target Support Files/Pods-sideDish/Pods-sideDish.debug.xcconfig"; sourceTree = "<group>"; };
 		10DDB465D4EB9C35EFDC09BD /* Pods-sideDishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDishTests.release.xcconfig"; path = "Target Support Files/Pods-sideDishTests/Pods-sideDishTests.release.xcconfig"; sourceTree = "<group>"; };
 		1EBF0237833C017ACB9B78A7 /* Pods-sideDishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDishTests.debug.xcconfig"; path = "Target Support Files/Pods-sideDishTests/Pods-sideDishTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,8 +96,6 @@
 		7072771273CF1AAD09C84075 /* Pods_sideDishTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDishTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		710EDB90263940CF00528CFA /* DetailFoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodInfo.swift; sourceTree = "<group>"; };
 		710EDB952639491B00528CFA /* DetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailData.swift; sourceTree = "<group>"; };
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 		718125F126368E990040E176 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		718125FA26368F320040E176 /* SideDish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDish.swift; sourceTree = "<group>"; };
 		7181260226368F4A0040E176 /* SideDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishes.swift; sourceTree = "<group>"; };
@@ -130,13 +124,10 @@
 		71A833DC262FE5D50060C4B4 /* PriceStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceStackView.swift; sourceTree = "<group>"; };
 		71A833E4262FEA3D0060C4B4 /* EventInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoStackView.swift; sourceTree = "<group>"; };
 		71A833E9262FF6130060C4B4 /* EventInfoBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoBadge.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		75DAD97EFBF0C9BA361A1472 /* Pods-sideDish-sideDishUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish-sideDishUITests.release.xcconfig"; path = "Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AE81E2F2E2D48948B017C9FD /* Pods_sideDish_sideDishUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDish_sideDishUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25E8B0B91AA42C8CDE2B2F1 /* Pods_sideDish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E141855FB706B9E3D188BCAA /* Pods-sideDish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish.release.xcconfig"; path = "Target Support Files/Pods-sideDish/Pods-sideDish.release.xcconfig"; sourceTree = "<group>"; };
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7181260E263690090040E176 /* Alamofire in Frameworks */,
-<<<<<<< HEAD
 				26861CBA006F9F561FCC81C3 /* Pods_sideDish.framework in Frameworks */,
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,10 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				1A6B849BB6456393A413F0C0 /* Pods_sideDishTests.framework in Frameworks */,
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,17 +152,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				42DB5446FF9DDC96686D1E43 /* Pods_sideDish_sideDishUITests.framework in Frameworks */,
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
 		066F886FCE6796E6954AFF80 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +172,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 		718125ED26368E730040E176 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,11 +187,8 @@
 				7181260226368F4A0040E176 /* SideDishes.swift */,
 				7181260726368F690040E176 /* DataBody.swift */,
 				718126132636983D0040E176 /* DishDataManager.swift */,
-<<<<<<< HEAD
 				710EDB90263940CF00528CFA /* DetailFoodInfo.swift */,
 				710EDB952639491B00528CFA /* DetailData.swift */,
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,11 +202,8 @@
 				719B37C8262E781D00107FE6 /* sideDishTests */,
 				719B37D3262E781D00107FE6 /* sideDishUITests */,
 				719B37B0262E781C00107FE6 /* Products */,
-<<<<<<< HEAD
 				066F886FCE6796E6954AFF80 /* Pods */,
 				9BF67322C9A06187AEA53C39 /* Frameworks */,
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			);
 			sourceTree = "<group>";
 		};
@@ -320,7 +293,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		9BF67322C9A06187AEA53C39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,8 +303,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,17 +310,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 719B37D9262E781D00107FE6 /* Build configuration list for PBXNativeTarget "sideDish" */;
 			buildPhases = (
-<<<<<<< HEAD
 				909D57DF0DACC15462BDC404 /* [CP] Check Pods Manifest.lock */,
 				719B37AB262E781C00107FE6 /* Sources */,
 				719B37AC262E781C00107FE6 /* Frameworks */,
 				719B37AD262E781C00107FE6 /* Resources */,
 				CCAB79C62F707D9EA5918C86 /* [CP] Embed Pods Frameworks */,
-=======
 				719B37AB262E781C00107FE6 /* Sources */,
 				719B37AC262E781C00107FE6 /* Frameworks */,
 				719B37AD262E781C00107FE6 /* Resources */,
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
+				719B37AB262E781C00107FE6 /* Sources */,
+				719B37AC262E781C00107FE6 /* Frameworks */,
+				719B37AD262E781C00107FE6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -369,10 +339,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 719B37DC262E781D00107FE6 /* Build configuration list for PBXNativeTarget "sideDishTests" */;
 			buildPhases = (
-<<<<<<< HEAD
 				543ECC55D75C657DE01ADB26 /* [CP] Check Pods Manifest.lock */,
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 				719B37C1262E781D00107FE6 /* Sources */,
 				719B37C2262E781D00107FE6 /* Frameworks */,
 				719B37C3262E781D00107FE6 /* Resources */,
@@ -391,17 +358,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 719B37DF262E781D00107FE6 /* Build configuration list for PBXNativeTarget "sideDishUITests" */;
 			buildPhases = (
-<<<<<<< HEAD
 				D81E9FB1696B8B4E15540A48 /* [CP] Check Pods Manifest.lock */,
 				719B37CC262E781D00107FE6 /* Sources */,
 				719B37CD262E781D00107FE6 /* Frameworks */,
 				719B37CE262E781D00107FE6 /* Resources */,
 				900EB80AB33EACBB5A3FD432 /* [CP] Embed Pods Frameworks */,
-=======
 				719B37CC262E781D00107FE6 /* Sources */,
 				719B37CD262E781D00107FE6 /* Frameworks */,
 				719B37CE262E781D00107FE6 /* Resources */,
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
+				719B37CC262E781D00107FE6 /* Sources */,
+				719B37CD262E781D00107FE6 /* Frameworks */,
+				719B37CE262E781D00107FE6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -522,7 +489,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-<<<<<<< HEAD
 /* Begin PBXShellScriptBuildPhase section */
 		543ECC55D75C657DE01ADB26 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -626,8 +592,6 @@
 		};
 /* End PBXShellScriptBuildPhase section */
 
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 /* Begin PBXSourcesBuildPhase section */
 		719B37AB262E781C00107FE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -643,17 +607,17 @@
 				719E9FCA2637A1A900186CA8 /* DetailViewController.swift in Sources */,
 				719B37F7262E7AF900107FE6 /* FoodCell.swift in Sources */,
 				719B37B5262E781C00107FE6 /* SceneDelegate.swift in Sources */,
-<<<<<<< HEAD
 				710EDB91263940CF00528CFA /* DetailFoodInfo.swift in Sources */,
 				7181260326368F4A0040E176 /* SideDishes.swift in Sources */,
 				719B37EF262E7A9F00107FE6 /* FoodInfoStackView.swift in Sources */,
 				719B37FC262E7BFA00107FE6 /* Constant.swift in Sources */,
 				710EDB962639491B00528CFA /* DetailData.swift in Sources */,
-=======
 				7181260326368F4A0040E176 /* SideDishes.swift in Sources */,
 				719B37EF262E7A9F00107FE6 /* FoodInfoStackView.swift in Sources */,
 				719B37FC262E7BFA00107FE6 /* Constant.swift in Sources */,
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
+				7181260326368F4A0040E176 /* SideDishes.swift in Sources */,
+				719B37EF262E7A9F00107FE6 /* FoodInfoStackView.swift in Sources */,
+				719B37FC262E7BFA00107FE6 /* Constant.swift in Sources */,
 				71A833EA262FF6130060C4B4 /* EventInfoBadge.swift in Sources */,
 				71A833DD262FE5D50060C4B4 /* PriceStackView.swift in Sources */,
 				7181260826368F690040E176 /* DataBody.swift in Sources */,
@@ -834,10 +798,7 @@
 		};
 		719B37DA262E781D00107FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 00045BFC5498283901AAFA68 /* Pods-sideDish.debug.xcconfig */;
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -856,10 +817,7 @@
 		};
 		719B37DB262E781D00107FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = E141855FB706B9E3D188BCAA /* Pods-sideDish.release.xcconfig */;
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -878,10 +836,7 @@
 		};
 		719B37DD262E781D00107FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 1EBF0237833C017ACB9B78A7 /* Pods-sideDishTests.debug.xcconfig */;
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -903,10 +858,7 @@
 		};
 		719B37DE262E781D00107FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 10DDB465D4EB9C35EFDC09BD /* Pods-sideDishTests.release.xcconfig */;
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -928,10 +880,7 @@
 		};
 		719B37E0262E781D00107FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 304DBF50C881421F613B7169 /* Pods-sideDish-sideDishUITests.debug.xcconfig */;
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -951,10 +900,7 @@
 		};
 		719B37E1262E781D00107FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
 			baseConfigurationReference = 75DAD97EFBF0C9BA361A1472 /* Pods-sideDish-sideDishUITests.release.xcconfig */;
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

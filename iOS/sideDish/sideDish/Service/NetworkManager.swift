@@ -10,15 +10,11 @@ class NetworkManager {
                 
                 if let error = response.error {
                     print(error)
-<<<<<<< HEAD
                     NotificationCenter.default.post(name: .networkError, object: self)
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
                     return
                 }
                 
                 guard let data = response.value else { return }
-<<<<<<< HEAD
                 DispatchQueue.main.async {
                     let dataBody = data.body
                     dataBody.forEach { eachData in
@@ -26,22 +22,12 @@ class NetworkManager {
                         decodedData.categoryID = eachData.categoryID
                         decodedData.name = eachData.name
                         decodedData.items = eachData.items
-=======
-                
-                DispatchQueue.main.async {
-                    let dataBody = data.body
-                    dataBody.forEach { eachData in
-                        let categoryID = eachData.categoryID
-                        let name = eachData.name
-                        let items = eachData.items
                         let decodedData = SideDishes(categoryID: categoryID, name: name, items: items)
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
                         NotificationCenter.default.post(name: .fetchData, object: self, userInfo: [KeyValue.sideDishes:decodedData])
                     }
                 }
             }
     }
-<<<<<<< HEAD
     
     static func fetchDetailInfo(_ hash: String) {
         print("hash:\(hash)")
@@ -70,7 +56,5 @@ class NetworkManager {
                 }
             }
     }
-=======
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 }
 

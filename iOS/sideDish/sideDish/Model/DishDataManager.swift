@@ -1,18 +1,11 @@
 import Foundation
 
 class DishDataManager {
-<<<<<<< HEAD
     
-    private var dishData: DataBody
-    
-    init() {
-        self.dishData = DataBody()
-=======
     private var dishData: DataBody
     
     init() {
         dishData = DataBody()
->>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
     }
     
     func addData(from data: SideDishes) {
