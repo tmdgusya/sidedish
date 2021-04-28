@@ -31,7 +31,7 @@ extension MainViewController {
     private func addNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moveToDetailViewController(_:)), name: .nextVC, object: nil)
-        NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: .networkError, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getDatabaseCacheData), name: .networkError, object: nil)
     }
 }
 
@@ -56,11 +56,11 @@ extension MainViewController {
         let location = notification.userInfo?["location"] as! CGPoint
         guard let indexPath = self.mainCollectionView.indexPathForItem(at: location) else { return }
         let data = dataManager.eachData(indexPath.section, indexPath.row)
-        let hash = data.detailHash // UnusedCode
-        let layout = UICollectionViewFlowLayout()
-        let detailVC = DetailViewController(collectionViewLayout: layout)
+        let hash = data.detailHash
+        let detailVC = DetailViewController()
         detailVC.modalPresentationStyle = .overCurrentContext
-        self.present(detailVC, animated: true, completion: nil)
+        detailVC.deliveryHashData(hash)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     @objc private func getDatabaseCacheData() {
@@ -76,7 +76,8 @@ extension MainViewController {
 private extension MainViewController {
     
     private func setupMainCollectionView() {
-        
+        navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = UIColor.white
         view.addSubview(mainCollectionView)
         configureMainCollectionView()
         mainCollectionView.register(FoodCell.self, forCellWithReuseIdentifier: CellIdentifier.foodCell)

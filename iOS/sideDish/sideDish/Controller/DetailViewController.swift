@@ -1,64 +1,47 @@
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-class DetailViewController: UICollectionViewController {
+class DetailViewController: UIViewController {
     
     private var detailhash: String!
+    
+    private lazy var leftButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(backBarButtonTouched))
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        NetworkManager.fetchDetailInfo(detailhash!)
+        addNotificationObserver()
         setupMainView()
     }
     
-    private func setupMainView() {
-        self.collectionView.backgroundColor = UIColor.white
+    func deliveryHashData(_ hashInfo: String) {
+        detailhash = hashInfo
     }
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)    
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    private func addNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getDetailFoodInfo(_:)), name: .detailInfo, object: nil)
     }
-    */
+}
 
+extension DetailViewController {
+    
+    @objc private func getDetailFoodInfo(_ notification: Notification) {
+        guard let foodInfo = notification.userInfo?["detailInfo"] as? DetailFoodInfo else { return }
+        print(foodInfo)
+    }
+    
+    @objc private func backBarButtonTouched() {
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DetailViewController {
+    
+    private func setupMainView() {
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.backBarButtonItem = leftButton
+        view.backgroundColor = UIColor.white
+    }
 }

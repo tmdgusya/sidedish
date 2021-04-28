@@ -10,6 +10,8 @@
 		1A6B849BB6456393A413F0C0 /* Pods_sideDishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7072771273CF1AAD09C84075 /* Pods_sideDishTests.framework */; };
 		26861CBA006F9F561FCC81C3 /* Pods_sideDish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25E8B0B91AA42C8CDE2B2F1 /* Pods_sideDish.framework */; };
 		42DB5446FF9DDC96686D1E43 /* Pods_sideDish_sideDishUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE81E2F2E2D48948B017C9FD /* Pods_sideDish_sideDishUITests.framework */; };
+		710EDB91263940CF00528CFA /* DetailFoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710EDB90263940CF00528CFA /* DetailFoodInfo.swift */; };
+		710EDB962639491B00528CFA /* DetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710EDB952639491B00528CFA /* DetailData.swift */; };
 		718125F226368E990040E176 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718125F126368E990040E176 /* NetworkManager.swift */; };
 		718125FB26368F320040E176 /* SideDish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718125FA26368F320040E176 /* SideDish.swift */; };
 		7181260326368F4A0040E176 /* SideDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181260226368F4A0040E176 /* SideDishes.swift */; };
@@ -92,6 +94,8 @@
 		1EBF0237833C017ACB9B78A7 /* Pods-sideDishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDishTests.debug.xcconfig"; path = "Target Support Files/Pods-sideDishTests/Pods-sideDishTests.debug.xcconfig"; sourceTree = "<group>"; };
 		304DBF50C881421F613B7169 /* Pods-sideDish-sideDishUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish-sideDishUITests.debug.xcconfig"; path = "Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7072771273CF1AAD09C84075 /* Pods_sideDishTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDishTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		710EDB90263940CF00528CFA /* DetailFoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodInfo.swift; sourceTree = "<group>"; };
+		710EDB952639491B00528CFA /* DetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailData.swift; sourceTree = "<group>"; };
 		718125F126368E990040E176 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		718125FA26368F320040E176 /* SideDish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDish.swift; sourceTree = "<group>"; };
 		7181260226368F4A0040E176 /* SideDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishes.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				7181260226368F4A0040E176 /* SideDishes.swift */,
 				7181260726368F690040E176 /* DataBody.swift */,
 				718126132636983D0040E176 /* DishDataManager.swift */,
+				710EDB90263940CF00528CFA /* DetailFoodInfo.swift */,
+				710EDB952639491B00528CFA /* DetailData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -589,9 +595,11 @@
 				719E9FCA2637A1A900186CA8 /* DetailViewController.swift in Sources */,
 				719B37F7262E7AF900107FE6 /* FoodCell.swift in Sources */,
 				719B37B5262E781C00107FE6 /* SceneDelegate.swift in Sources */,
+				710EDB91263940CF00528CFA /* DetailFoodInfo.swift in Sources */,
 				7181260326368F4A0040E176 /* SideDishes.swift in Sources */,
 				719B37EF262E7A9F00107FE6 /* FoodInfoStackView.swift in Sources */,
 				719B37FC262E7BFA00107FE6 /* Constant.swift in Sources */,
+				710EDB962639491B00528CFA /* DetailData.swift in Sources */,
 				71A833EA262FF6130060C4B4 /* EventInfoBadge.swift in Sources */,
 				71A833DD262FE5D50060C4B4 /* PriceStackView.swift in Sources */,
 				7181260826368F690040E176 /* DataBody.swift in Sources */,
