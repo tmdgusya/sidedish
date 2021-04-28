@@ -1,10 +1,24 @@
 import UIKit
+<<<<<<< HEAD
 import RealmSwift
+=======
+
+protocol DetailHashDelegate: class {
+    
+    func deliveryData(_ hashData: String)
+    
+}
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
 
 class MainViewController: UIViewController {
     
     private var dataManager = DishDataManager()
+<<<<<<< HEAD
 
+=======
+    weak var delegate: DetailHashDelegate?
+    
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
     private lazy var mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -31,7 +45,10 @@ extension MainViewController {
     private func addNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moveToDetailViewController(_:)), name: .nextVC, object: nil)
+<<<<<<< HEAD
         NotificationCenter.default.addObserver(self, selector: #selector(getDatabaseCacheData), name: .networkError, object: nil)
+=======
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
     }
 }
 
@@ -40,6 +57,7 @@ extension MainViewController {
     
     @objc private func getNetworkData(_ notification: Notification) {
         guard let data = notification.userInfo?[KeyValue.sideDishes] as? SideDishes else { return }
+<<<<<<< HEAD
         let realm = try! Realm()
         let dish = SideDishes()
         dish.categoryID = data.categoryID
@@ -49,6 +67,9 @@ extension MainViewController {
         try! realm.write {
             realm.add(dish, update: .all)
         }
+=======
+        dataManager.addData(from: data)
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
         mainCollectionView.reloadData()
     }
     
@@ -57,6 +78,7 @@ extension MainViewController {
         guard let indexPath = self.mainCollectionView.indexPathForItem(at: location) else { return }
         let data = dataManager.eachData(indexPath.section, indexPath.row)
         let hash = data.detailHash
+<<<<<<< HEAD
         let detailVC = DetailViewController()
         detailVC.modalPresentationStyle = .overCurrentContext
         detailVC.deliveryHashData(hash)
@@ -69,6 +91,13 @@ extension MainViewController {
         data.forEach { sideDishes in
             dataManager.addData(from: sideDishes)
         }
+=======
+        delegate?.deliveryData(hash)
+        let layout = UICollectionViewFlowLayout()
+        let detailVC = DetailViewController(collectionViewLayout: layout)
+        detailVC.modalPresentationStyle = .overCurrentContext
+        self.present(detailVC, animated: true, completion: nil)
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
     }
 }
 
@@ -76,8 +105,12 @@ extension MainViewController {
 private extension MainViewController {
     
     private func setupMainCollectionView() {
+<<<<<<< HEAD
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = UIColor.white
+=======
+        
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
         view.addSubview(mainCollectionView)
         configureMainCollectionView()
         mainCollectionView.register(FoodCell.self, forCellWithReuseIdentifier: CellIdentifier.foodCell)
@@ -103,6 +136,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+<<<<<<< HEAD
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else {
             return UICollectionViewCell()
         }
@@ -112,6 +146,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
 
+=======
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else { return UICollectionViewCell() }
+        let sideDish = dataManager.eachData(indexPath.section, indexPath.row)
+        
+        guard let url = URL(string: sideDish.image) else {
+            return UICollectionViewCell()
+        }
+        
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
         var dishImage: UIImage?
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
@@ -120,6 +163,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 }
             }
         }.resume()
+<<<<<<< HEAD
 
 
         DispatchQueue.main.async {
@@ -144,6 +188,31 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //                    }
 //                }
 //            }
+=======
+        
+        
+        DispatchQueue.main.async {
+            if let image = dishImage{
+                cell.foodImageView.image = image
+            } else {
+                cell.foodImageView.image = UIImage(named: "side")
+            }
+            cell.foodInfoStackView.foodNameLabel.text = sideDish.title
+            cell.foodInfoStackView.foodDescriptionLabel.text = sideDish.description
+            cell.foodInfoStackView.priceStackView.normalPriceLabel.text = sideDish.sPrice
+            if let nPrice = sideDish.nPrice {
+                cell.foodInfoStackView.priceStackView.eventPriceLabel?.attributedText = PriceStackView.convertToNSAttributedString(from: nPrice)
+            }
+            if let eventPrice = sideDish.badge {
+                eventPrice.forEach { badge in
+                    if badge == "이벤트특가" {
+                        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = badge
+                    } else {
+                        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = badge
+                    }
+                }
+            }
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
         }
         return cell
     }

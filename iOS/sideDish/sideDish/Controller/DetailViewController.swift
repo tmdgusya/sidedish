@@ -43,5 +43,6 @@ extension DetailViewController {
         navigationController?.navigationBar.isHidden = false
         navigationItem.backBarButtonItem = leftButton
         view.backgroundColor = UIColor.white
+    
     }
 }

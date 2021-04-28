@@ -2,8 +2,13 @@ import UIKit
 
 class FoodCell: UICollectionViewCell {
     
+<<<<<<< HEAD
     private var foodImageView: UIImageView!
     private var foodInfoStackView: FoodInfoStackView!
+=======
+    var foodImageView: UIImageView!
+    var foodInfoStackView: FoodInfoStackView!
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +58,7 @@ extension FoodCell {
         foodInfoStackView.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
     }
 }
+<<<<<<< HEAD
 
 //MARK: -CellInfo
 
@@ -78,3 +84,5 @@ extension FoodCell {
         foodImageView.image = image
     }
 }
+=======
+>>>>>>> 77b41760a9fb566dc0fe901fc33fc6c8b9b4c74c
