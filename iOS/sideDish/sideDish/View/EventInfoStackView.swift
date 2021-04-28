@@ -2,8 +2,8 @@ import UIKit
 
 class EventInfoStackView: UIStackView {
     
-    var eventPriceLabel: EventInfoBadge?
-    var launchingPriceLabel: EventInfoBadge?
+    private var eventPriceLabel: EventInfoBadge?
+    private var launchingPriceLabel: EventInfoBadge?
     private var peddingView: UIView?
     
     override init(frame: CGRect) {

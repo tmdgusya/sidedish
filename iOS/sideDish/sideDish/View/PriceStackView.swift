@@ -2,8 +2,8 @@ import UIKit
 
 class PriceStackView: UIStackView {
     
-    var normalPriceLabel: UILabel!
-    var eventPriceLabel: UILabel?
+    private var normalPriceLabel: UILabel!
+    private var eventPriceLabel: UILabel?
     private var peddingView: UIView?
     
     override init(frame: CGRect) {
@@ -56,9 +56,20 @@ extension PriceStackView {
         addArrangedSubview(peddingView!)
     }
     
-    static func convertToNSAttributedString(from string: String) -> NSAttributedString {
+    private func convertToNSAttributedString(from string: String) -> NSAttributedString {
         let attributedText = NSMutableAttributedString(string: string)
         attributedText.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributedText.length))
         return attributedText
+    }
+}
+
+extension PriceStackView {
+    
+    func setupNormalPriceLabel(_ text:String) {
+        normalPriceLabel.text = text
+    }
+    
+    func setupEventPriceLabel(_ text:String) {
+        eventPriceLabel?.attributedText = convertToNSAttributedString(from: text)
     }
 }

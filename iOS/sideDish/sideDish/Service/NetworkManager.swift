@@ -10,11 +10,11 @@ class NetworkManager {
                 
                 if let error = response.error {
                     print(error)
+                    NotificationCenter.default.post(name: .networkError, object: self)
                     return
                 }
                 
                 guard let data = response.value else { return }
-                
                 DispatchQueue.main.async {
                     let dataBody = data.body
                     dataBody.forEach { eachData in

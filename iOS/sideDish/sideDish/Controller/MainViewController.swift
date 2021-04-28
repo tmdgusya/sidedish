@@ -24,8 +24,6 @@ class MainViewController: UIViewController {
         NetworkManager.fetchSideDishData()
         addNotificationCenter()
     }
-
-    
 }
 
 //MARK: Notification
@@ -33,6 +31,7 @@ extension MainViewController {
     private func addNotificationCenter() {
         NotificationCenter.default.addObserver(self, selector: #selector(getNetworkData(_:)), name: .fetchData, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moveToDetailViewController(_:)), name: .nextVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: .networkError, object: nil)
     }
 }
 
@@ -46,6 +45,7 @@ extension MainViewController {
         dish.categoryID = data.categoryID
         dish.name = data.name
         dish.items.append(objectsIn: data.items)
+        dataManager.addData(from: dish)
         try! realm.write {
             realm.add(dish, update: .all)
         }
@@ -61,6 +61,14 @@ extension MainViewController {
         let detailVC = DetailViewController(collectionViewLayout: layout)
         detailVC.modalPresentationStyle = .overCurrentContext
         self.present(detailVC, animated: true, completion: nil)
+    }
+    
+    @objc private func getDatabaseCacheData() {
+        let realm = try! Realm()
+        let data = realm.objects(SideDishes.self)
+        data.forEach { sideDishes in
+            dataManager.addData(from: sideDishes)
+        }
     }
 }
 
@@ -94,41 +102,48 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else { return UICollectionViewCell() }
-//        let sideDish = dataManager.eachData(indexPath.section, indexPath.row)
-//
-//        guard let url = URL(string: sideDish.image) else {
-//            return UICollectionViewCell()
-//        }
-//
-//        var dishImage: UIImage?
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            DispatchQueue.main.async {
-//                if let data = data, let image = UIImage(data: data) {
-//                    dishImage = image
-//                }
-//            }
-//        }.resume()
-//
-//
-//        DispatchQueue.main.async {
-//            if let image = dishImage{
-//                cell.foodImageView.image = image
-//            } else {
-//                cell.foodImageView.image = UIImage(named: "side")
-//            }
-//            cell.foodInfoStackView.foodNameLabel.text = sideDish.title
-//            cell.foodInfoStackView.foodDescriptionLabel.text = sideDish.description
-//            cell.foodInfoStackView.priceStackView.normalPriceLabel.text = sideDish.sPrice
-//            cell.foodInfoStackView.priceStackView.eventPriceLabel?.attributedText = PriceStackView.convertToNSAttributedString(from: sideDish.nPrice)
-//            sideDish.badge.forEach { badge in
-//                    if badge == "이벤트특가" {
-//                        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = badge
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else {
+            return UICollectionViewCell()
+        }
+        let sideDish = dataManager.eachData(indexPath.section, indexPath.row)
+
+        guard let url = URL(string: sideDish.image) else {
+            return UICollectionViewCell()
+        }
+
+        var dishImage: UIImage?
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data, let image = UIImage(data: data) {
+                    dishImage = image
+                }
+            }
+        }.resume()
+
+
+        DispatchQueue.main.async {
+            if let image = dishImage{
+                cell.setupCellImage(image)
+            } else {
+                cell.setupCellImage(UIImage(named: "side") ?? UIImage())
+            }
+            cell.setupCellTitle(sideDish.title)
+            cell.setupCellDescription(sideDish.detail)
+            cell.setupCellNormalPrice(sideDish.sPrice)
+            if let nPrice = sideDish.nPrice {
+                cell.setupCellEventPrice(nPrice)
+            }
+//            if let badge = sideDish.badge {
+//                print(badge.count)
+//                Array(badge).forEach { item in
+//                    if item == "이벤트특가" {
+//                        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = item
 //                    } else {
-//                        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = badge
+//                        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = item
 //                    }
 //                }
-//        }
+//            }
+        }
         return cell
     }
     

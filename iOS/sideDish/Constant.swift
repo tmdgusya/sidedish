@@ -25,4 +25,5 @@ enum KeyValue {
 extension Notification.Name {
     static let fetchData = Notification.Name("fetchData")
     static let nextVC = Notification.Name("nextVC")
+    static let networkError = Notification.Name("error")
 }
