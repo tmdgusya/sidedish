@@ -2,11 +2,21 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    private var collectionViewDelegate: CollectionViewDelegate = {
+       let delegate = CollectionViewDelegate()
+        return delegate
+    }()
+    
+    private var collectionViewDataSource: CollectionViewDataSource = {
+       let dataSource = CollectionViewDataSource()
+        return dataSource
+    }()
+    
     private lazy var mainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.dataSource = self
-        view.delegate = self
+        view.dataSource = collectionViewDataSource
+        view.delegate = collectionViewDelegate
         return view
     }()
     
@@ -40,67 +50,5 @@ private extension MainViewController {
         mainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         mainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-    }
-}
-
-//MARK: -CollectionView DataSource && Delegate
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5 // test code
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else { return UICollectionViewCell() }
-        //Start TestCode
-        cell.setupFoodImage(UIImage(named: "side") ?? UIImage())
-        cell.setupFoodName("[마샐미디쉬] 매콤마늘쫑 해산물볶음 180G")
-        cell.setupFoodDescription("탱글탱글한 새우와 오징어를 ..")
-        cell.setupNormalPrice("6,210원")
-        cell.setupEventPrice("9,999원")
-        cell.setupEventBadge("이벤트특가")
-        cell.setupLaunchingBadge("론칭특가")
-        //End TestCode
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 343, height: 130)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 15, bottom: 30, right: 15)
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CellIdentifier.foodHeader, for: indexPath) as? CollectionViewHeader else {
-            return UICollectionReusableView()
-        }
-        
-        if kind == UICollectionView.elementKindSectionHeader
-        {
-            if indexPath.section == 0
-            {
-                header.setupHeaderLabel(HeaderInfo.main)
-            }
-            else if indexPath.section == 1
-            {
-                header.setupHeaderLabel(HeaderInfo.soup)
-            }
-            else
-            {
-                header.setupHeaderLabel(HeaderInfo.side) 
-            }
-        }
-        return header
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: 343, height: 50)
     }
 }
