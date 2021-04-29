@@ -1,33 +1,24 @@
 import Foundation
-import RxSwift
 
-class SideDishManager: SideDishManagerType {
+class SideDishManager {
     
     private var dishManager = [SideDishes]()
     
-    private lazy var store = PublishSubject<[SideDishes]>()
+    static var foodManager = SideDishManager()
+    
+    static func sharedInstance() -> SideDishManager {
+        return foodManager
+    }
     
     func append(dish: SideDishes) {
         dishManager.append(dish)
     }
-    
-    func getDataCount() -> [Int] {
-        var count = [Int]()
-        dishManager.forEach {
-            count.append($0.count())
-        }
-        return count
+
+    func getFoodData(_ section: Int, _ row: Int) -> SideDish {
+        return dishManager[section].getData(row)
     }
     
-    @discardableResult
-    func createSideDish(_ dish: SideDishes) -> Observable<SideDishes> {
-        dishManager.append(dish)
-        store.onNext(dishManager)
-        return Observable.just(dish)
-    }
-    
-    @discardableResult
-    func sideDishList() -> Observable<[SideDishes]> {
-        return store
+    func getDataCount() -> Int {
+        return dishManager.count
     }
 }

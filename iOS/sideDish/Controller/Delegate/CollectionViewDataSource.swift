@@ -2,11 +2,7 @@ import UIKit
 
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    private var dataManagerCount: [Int]?
-    
-    func dataCount(_ count: [Int]) {
-        dataManagerCount = count
-    }
+    private var foodManager = SideDishManager.sharedInstance()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let dataCount = [8, 8, 8] //임시코드 반드시 수정해야 함
@@ -15,20 +11,39 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else { return UICollectionViewCell() }
-        //Start TestCode
-        cell.setupFoodImage(UIImage(named: "side") ?? UIImage())
-        cell.setupFoodName("[마샐미디쉬] 매콤마늘쫑 해산물볶음 180G")
-        cell.setupFoodDescription("탱글탱글한 새우와 오징어를 ..")
-        cell.setupNormalPrice("6,210원")
-        cell.setupEventPrice("9,999원")
-        cell.setupEventBadge("이벤트특가")
-        cell.setupLaunchingBadge("론칭특가")
+        let data = foodManager.getFoodData(indexPath.section, indexPath.row)
+        let url = URL(string: data.image)!
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data, let image = UIImage(data: data) {
+                    cell.setupFoodImage(image)
+                }
+            
+            }
+        }.resume()
+        cell.setupFoodName(data.title)
+        cell.setupFoodDescription(data.detail)
+        cell.setupNormalPrice(data.sPrice)
+        cell.setupEventPrice(data.nPrice ?? "")
+        if let badge = data.badge {
+            badge.forEach { content in
+                if content == "이벤트특가"
+                {
+                    cell.setupEventBadge(content)
+                }
+                else
+                {
+                    cell.setupLaunchingBadge(content)
+                }
+            }
+        }
         //End TestCode
         return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return foodManager.getDataCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -54,4 +69,5 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         }
         return header
     }
+    
 }

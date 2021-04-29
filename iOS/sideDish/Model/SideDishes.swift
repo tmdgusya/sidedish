@@ -6,4 +6,8 @@ struct SideDishes: Decodable {
     func count() -> Int {
         return body.count
     }
+    
+    func getData(_ index: Int) -> SideDish {
+        return body[index]
+    }
 }

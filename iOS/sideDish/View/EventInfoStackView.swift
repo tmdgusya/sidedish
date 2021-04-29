@@ -21,6 +21,7 @@ class EventInfoStackView: UIStackView {
     }
     
     func setupLaunchingPriceLabel(_ text: String) {
+        launchingPriceLabel?.widthAnchor.constraint(equalToConstant: 40).isActive = true
         launchingPriceLabel?.text = text
     }
 }
