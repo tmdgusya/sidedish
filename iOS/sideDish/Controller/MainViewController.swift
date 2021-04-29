@@ -35,7 +35,8 @@ class MainViewController: UIViewController {
 private extension MainViewController {
     
     private func setupMainCollectionView() {
-        
+        navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = UIColor.white
         view.addSubview(mainCollectionView)
         configureMainCollectionView()
         mainCollectionView.register(FoodCell.self, forCellWithReuseIdentifier: CellIdentifier.foodCell)
