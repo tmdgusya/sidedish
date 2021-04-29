@@ -2,8 +2,8 @@ import UIKit
 
 class EventInfoStackView: UIStackView {
     
-    var eventPriceLabel: EventInfoBadge?
-    var launchingPriceLabel: EventInfoBadge?
+    private var eventPriceLabel: EventInfoBadge?
+    private var launchingPriceLabel: EventInfoBadge?
     private var peddingView: UIView?
     
     override init(frame: CGRect) {
@@ -15,9 +15,17 @@ class EventInfoStackView: UIStackView {
         super.init(coder: coder)
         setupMainView()
     }
+    
+    func setupEventPriceLabel(_ text: String) {
+        eventPriceLabel?.text = text
+    }
+    
+    func setupLaunchingPriceLabel(_ text: String) {
+        launchingPriceLabel?.text = text
+    }
 }
 
-extension EventInfoStackView {
+private extension EventInfoStackView {
     
     private func setupMainView() {
         configureMainView()

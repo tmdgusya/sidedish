@@ -1,9 +1,12 @@
 import UIKit
-import Toaster
 
 class CollectionViewHeader: UICollectionReusableView {
     
-    var headerLabel: UILabel!
+    private lazy var headerLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,9 +20,15 @@ class CollectionViewHeader: UICollectionReusableView {
         setupTapGesture()
     }
     
+    func setupHeaderLabel(_ text: String) {
+        headerLabel.text = text
+    }
+}
+
+//MARK: -Configuration & Setup
+private extension CollectionViewHeader {
+    
     private func configureHeaderLabel() {
-        headerLabel = UILabel(frame: .zero)
-        headerLabel.font = UIFont.boldSystemFont(ofSize: 22)
         addSubview(headerLabel)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.widthAnchor.constraint(equalToConstant: 343).isActive = true
@@ -28,12 +37,17 @@ class CollectionViewHeader: UICollectionReusableView {
         headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
     }
 
+}
+
+//MARK: -Add TapGesture
+private extension CollectionViewHeader {
+    
     private func setupTapGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapSectionHeader(_:)))
         addGestureRecognizer(gesture)
     }
-
+    
     @objc private func didTapSectionHeader(_ gesture: UITapGestureRecognizer) {
-        Toast(text: "asdfasdf").show()
+        //add Notification Method or Delegate
     }
 }

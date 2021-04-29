@@ -2,8 +2,8 @@ import UIKit
 
 class FoodCell: UICollectionViewCell {
     
-    var foodImageView: UIImageView!
-    var foodInfoStackView: FoodInfoStackView!
+    private var foodImageView: UIImageView!
+    private var foodInfoStackView: FoodInfoStackView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -14,10 +14,38 @@ class FoodCell: UICollectionViewCell {
         super.init(coder: coder)
         setupFoodCell()
     }
+    
+    func setupFoodName(_ text:String) {
+        foodInfoStackView.setupFoodNameLabel(text)
+    }
+    
+    func setupFoodDescription(_ text:String) {
+        foodInfoStackView.setupFoodDescriptionLabel(text)
+    }
+    
+    func setupFoodImage(_ image: UIImage) {
+        foodImageView.image = image
+    }
+    
+    func setupNormalPrice(_ text: String) {
+        foodInfoStackView.setupNormalPrice(text)
+    }
+    
+    func setupEventPrice(_ text: String) {
+        foodInfoStackView.setupEventPrice(text)
+    }
+    
+    func setupEventBadge(_ text: String) {
+        foodInfoStackView.setupEventBadge(text)
+    }
+    
+    func setupLaunchingBadge(_ text: String) {
+        foodInfoStackView.setupLaunchingBadge(text)
+    }
 }
 
 //MARK: -Setup && Cofiguration
-extension FoodCell {
+private extension FoodCell {
     
     private func setupFoodCell() {
         configureFoodCell()

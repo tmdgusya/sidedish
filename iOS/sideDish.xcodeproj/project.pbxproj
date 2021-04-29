@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		469B73C29A436439D3EE818F /* Pods_sideDish_sideDishUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91345CE5A9D597B89FEB1CF4 /* Pods_sideDish_sideDishUITests.framework */; };
 		719B37B3262E781C00107FE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37B2262E781C00107FE6 /* AppDelegate.swift */; };
 		719B37B5262E781C00107FE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37B4262E781C00107FE6 /* SceneDelegate.swift */; };
 		719B37B7262E781C00107FE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37B6262E781C00107FE6 /* MainViewController.swift */; };
@@ -19,9 +20,12 @@
 		719B37F7262E7AF900107FE6 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37F6262E7AF900107FE6 /* FoodCell.swift */; };
 		719B37FC262E7BFA00107FE6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B37FB262E7BFA00107FE6 /* Constant.swift */; };
 		719B3801262E7CF100107FE6 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B3800262E7CF100107FE6 /* CollectionViewHeader.swift */; };
+		719CD331263A4E1400318D7F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719CD330263A4E1400318D7F /* NetworkManager.swift */; };
 		71A833DD262FE5D50060C4B4 /* PriceStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A833DC262FE5D50060C4B4 /* PriceStackView.swift */; };
 		71A833E5262FEA3D0060C4B4 /* EventInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A833E4262FEA3D0060C4B4 /* EventInfoStackView.swift */; };
 		71A833EA262FF6130060C4B4 /* EventInfoBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A833E9262FF6130060C4B4 /* EventInfoBadge.swift */; };
+		CFDE524038514906B8412144 /* Pods_sideDishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7F270F509C7B0E7BFC5BBE /* Pods_sideDishTests.framework */; };
+		EBE10E6505ED5BDB492FBD80 /* Pods_sideDish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B0A801F57EE64625EB44B8 /* Pods_sideDish.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,44 +43,13 @@
 			remoteGlobalIDString = 719B37AE262E781C00107FE6;
 			remoteInfo = sideDish;
 		};
-		719B380C262E821300107FE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 719B3805262E821300107FE6 /* Toaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A75E2B1BCF2066002E46C4;
-			remoteInfo = Toaster;
-		};
-		719B380E262E821300107FE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 719B3805262E821300107FE6 /* Toaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A75E4F1BCF20D4002E46C4;
-			remoteInfo = ToasterDemo;
-		};
-		719B3810262E821300107FE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 719B3805262E821300107FE6 /* Toaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3719A728225598E4009EAFCD;
-			remoteInfo = ToasterDemoObjC;
-		};
-		719B3812262E821300107FE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 719B3805262E821300107FE6 /* Toaster.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C06FC9D11F95A8CC00782082;
-			remoteInfo = ToasterTests;
-		};
-		719B3819262E821A00107FE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 719B3805262E821300107FE6 /* Toaster.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 03A75E2A1BCF2066002E46C4;
-			remoteInfo = Toaster;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0574E82904E1DDC38A24F2B9 /* Pods-sideDishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDishTests.release.xcconfig"; path = "Target Support Files/Pods-sideDishTests/Pods-sideDishTests.release.xcconfig"; sourceTree = "<group>"; };
+		0DB4F586C6B63FC67ECD536B /* Pods-sideDishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDishTests.debug.xcconfig"; path = "Target Support Files/Pods-sideDishTests/Pods-sideDishTests.debug.xcconfig"; sourceTree = "<group>"; };
+		31B0A801F57EE64625EB44B8 /* Pods_sideDish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		426C628E2DD5E2C99EEA5CD3 /* Pods-sideDish-sideDishUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish-sideDishUITests.release.xcconfig"; path = "Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests.release.xcconfig"; sourceTree = "<group>"; };
 		719B37AF262E781C00107FE6 /* sideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719B37B2262E781C00107FE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719B37B4262E781C00107FE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,10 +68,15 @@
 		719B37F6262E7AF900107FE6 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		719B37FB262E7BFA00107FE6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		719B3800262E7CF100107FE6 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
-		719B3805262E821300107FE6 /* Toaster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Toaster.xcodeproj; path = "../../../Toaster-master/Toaster-master/Toaster.xcodeproj"; sourceTree = "<group>"; };
+		719CD330263A4E1400318D7F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		71A833DC262FE5D50060C4B4 /* PriceStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceStackView.swift; sourceTree = "<group>"; };
 		71A833E4262FEA3D0060C4B4 /* EventInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoStackView.swift; sourceTree = "<group>"; };
 		71A833E9262FF6130060C4B4 /* EventInfoBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoBadge.swift; sourceTree = "<group>"; };
+		7A56C1453F792634D4C7CC9D /* Pods-sideDish-sideDishUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish-sideDishUITests.debug.xcconfig"; path = "Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		91345CE5A9D597B89FEB1CF4 /* Pods_sideDish_sideDishUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDish_sideDishUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06C4F1773A23E05FBC94D38 /* Pods-sideDish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish.release.xcconfig"; path = "Target Support Files/Pods-sideDish/Pods-sideDish.release.xcconfig"; sourceTree = "<group>"; };
+		BFB5F792DFBDB7A755CA087B /* Pods-sideDish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish.debug.xcconfig"; path = "Target Support Files/Pods-sideDish/Pods-sideDish.debug.xcconfig"; sourceTree = "<group>"; };
+		FB7F270F509C7B0E7BFC5BBE /* Pods_sideDishTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDishTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE10E6505ED5BDB492FBD80 /* Pods_sideDish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDE524038514906B8412144 /* Pods_sideDishTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,21 +100,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				469B73C29A436439D3EE818F /* Pods_sideDish_sideDishUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17A50D3579C479E5EEDAC982 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFB5F792DFBDB7A755CA087B /* Pods-sideDish.debug.xcconfig */,
+				A06C4F1773A23E05FBC94D38 /* Pods-sideDish.release.xcconfig */,
+				7A56C1453F792634D4C7CC9D /* Pods-sideDish-sideDishUITests.debug.xcconfig */,
+				426C628E2DD5E2C99EEA5CD3 /* Pods-sideDish-sideDishUITests.release.xcconfig */,
+				0DB4F586C6B63FC67ECD536B /* Pods-sideDishTests.debug.xcconfig */,
+				0574E82904E1DDC38A24F2B9 /* Pods-sideDishTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		719B37A6262E781C00107FE6 = {
 			isa = PBXGroup;
 			children = (
-				719B3805262E821300107FE6 /* Toaster.xcodeproj */,
 				719B37FB262E7BFA00107FE6 /* Constant.swift */,
 				719B37B1262E781C00107FE6 /* sideDish */,
 				719B37C8262E781D00107FE6 /* sideDishTests */,
 				719B37D3262E781D00107FE6 /* sideDishUITests */,
 				719B37B0262E781C00107FE6 /* Products */,
+				17A50D3579C479E5EEDAC982 /* Pods */,
+				F0F6A66BE45B469D4C05E56B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +146,7 @@
 		719B37B1262E781C00107FE6 /* sideDish */ = {
 			isa = PBXGroup;
 			children = (
+				719CD32F263A4E0800318D7F /* Service */,
 				719B37ED262E7A8A00107FE6 /* View */,
 				719B37EC262E7A7700107FE6 /* Supports */,
 				719B37EB262E7A6500107FE6 /* Controller */,
@@ -210,15 +206,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		719B3806262E821300107FE6 /* Products */ = {
+		719CD32F263A4E0800318D7F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				719B380D262E821300107FE6 /* Toaster.framework */,
-				719B380F262E821300107FE6 /* ToasterDemo.app */,
-				719B3811262E821300107FE6 /* ToasterDemoObjC.app */,
-				719B3813262E821300107FE6 /* ToasterTests.xctest */,
+				719CD330263A4E1400318D7F /* NetworkManager.swift */,
 			);
-			name = Products;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F0F6A66BE45B469D4C05E56B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31B0A801F57EE64625EB44B8 /* Pods_sideDish.framework */,
+				91345CE5A9D597B89FEB1CF4 /* Pods_sideDish_sideDishUITests.framework */,
+				FB7F270F509C7B0E7BFC5BBE /* Pods_sideDishTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,14 +231,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 719B37D9262E781D00107FE6 /* Build configuration list for PBXNativeTarget "sideDish" */;
 			buildPhases = (
+				BC258975E0E6606809D0B906 /* [CP] Check Pods Manifest.lock */,
 				719B37AB262E781C00107FE6 /* Sources */,
 				719B37AC262E781C00107FE6 /* Frameworks */,
 				719B37AD262E781C00107FE6 /* Resources */,
+				A6533E035A305908BD0639FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				719B381A262E821A00107FE6 /* PBXTargetDependency */,
 			);
 			name = sideDish;
 			productName = sideDish;
@@ -246,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 719B37DC262E781D00107FE6 /* Build configuration list for PBXNativeTarget "sideDishTests" */;
 			buildPhases = (
+				EB443D2CA8E6C96C3D3DEB9F /* [CP] Check Pods Manifest.lock */,
 				719B37C1262E781D00107FE6 /* Sources */,
 				719B37C2262E781D00107FE6 /* Frameworks */,
 				719B37C3262E781D00107FE6 /* Resources */,
@@ -264,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 719B37DF262E781D00107FE6 /* Build configuration list for PBXNativeTarget "sideDishUITests" */;
 			buildPhases = (
+				9F5F4DB1793C160DBD473C54 /* [CP] Check Pods Manifest.lock */,
 				719B37CC262E781D00107FE6 /* Sources */,
 				719B37CD262E781D00107FE6 /* Frameworks */,
 				719B37CE262E781D00107FE6 /* Resources */,
+				FB6BCDBB77A9B7555E8C3770 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,12 +318,6 @@
 			mainGroup = 719B37A6262E781C00107FE6;
 			productRefGroup = 719B37B0262E781C00107FE6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 719B3806262E821300107FE6 /* Products */;
-					ProjectRef = 719B3805262E821300107FE6 /* Toaster.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				719B37AE262E781C00107FE6 /* sideDish */,
@@ -325,37 +326,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		719B380D262E821300107FE6 /* Toaster.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Toaster.framework;
-			remoteRef = 719B380C262E821300107FE6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		719B380F262E821300107FE6 /* ToasterDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ToasterDemo.app;
-			remoteRef = 719B380E262E821300107FE6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		719B3811262E821300107FE6 /* ToasterDemoObjC.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ToasterDemoObjC.app;
-			remoteRef = 719B3810262E821300107FE6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		719B3813262E821300107FE6 /* ToasterTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ToasterTests.xctest;
-			remoteRef = 719B3812262E821300107FE6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		719B37AD262E781C00107FE6 /* Resources */ = {
@@ -384,6 +354,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F5F4DB1793C160DBD473C54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sideDish-sideDishUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6533E035A305908BD0639FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sideDish/Pods-sideDish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sideDish/Pods-sideDish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sideDish/Pods-sideDish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC258975E0E6606809D0B906 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sideDish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB443D2CA8E6C96C3D3DEB9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sideDishTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB6BCDBB77A9B7555E8C3770 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		719B37AB262E781C00107FE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -393,6 +466,7 @@
 				719B3801262E7CF100107FE6 /* CollectionViewHeader.swift in Sources */,
 				719B37B3262E781C00107FE6 /* AppDelegate.swift in Sources */,
 				71A833E5262FEA3D0060C4B4 /* EventInfoStackView.swift in Sources */,
+				719CD331263A4E1400318D7F /* NetworkManager.swift in Sources */,
 				719B37F7262E7AF900107FE6 /* FoodCell.swift in Sources */,
 				719B37B5262E781C00107FE6 /* SceneDelegate.swift in Sources */,
 				719B37EF262E7A9F00107FE6 /* FoodInfoStackView.swift in Sources */,
@@ -430,11 +504,6 @@
 			isa = PBXTargetDependency;
 			target = 719B37AE262E781C00107FE6 /* sideDish */;
 			targetProxy = 719B37D1262E781D00107FE6 /* PBXContainerItemProxy */;
-		};
-		719B381A262E821A00107FE6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Toaster;
-			targetProxy = 719B3819262E821A00107FE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -576,6 +645,7 @@
 		};
 		719B37DA262E781D00107FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFB5F792DFBDB7A755CA087B /* Pods-sideDish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -594,6 +664,7 @@
 		};
 		719B37DB262E781D00107FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06C4F1773A23E05FBC94D38 /* Pods-sideDish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -612,6 +683,7 @@
 		};
 		719B37DD262E781D00107FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB4F586C6B63FC67ECD536B /* Pods-sideDishTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -633,6 +705,7 @@
 		};
 		719B37DE262E781D00107FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0574E82904E1DDC38A24F2B9 /* Pods-sideDishTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -654,6 +727,7 @@
 		};
 		719B37E0262E781D00107FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A56C1453F792634D4C7CC9D /* Pods-sideDish-sideDishUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -673,6 +747,7 @@
 		};
 		719B37E1262E781D00107FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 426C628E2DD5E2C99EEA5CD3 /* Pods-sideDish-sideDishUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

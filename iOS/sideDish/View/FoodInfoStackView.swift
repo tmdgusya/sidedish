@@ -2,10 +2,10 @@ import UIKit
 
 class FoodInfoStackView: UIStackView {
     
-    var foodNameLabel: UILabel!
-    var foodDescriptionLabel: UILabel!
-    var priceStackView: PriceStackView!
-    var eventStackView: EventInfoStackView!
+    private var foodNameLabel: UILabel!
+    private var foodDescriptionLabel: UILabel!
+    private var priceStackView: PriceStackView!
+    private var eventStackView: EventInfoStackView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,7 +17,29 @@ class FoodInfoStackView: UIStackView {
         setupMainView()
     }
     
+    func setupFoodNameLabel(_ text: String) {
+        foodNameLabel.text = text
+    }
     
+    func setupFoodDescriptionLabel(_ text: String) {
+        foodDescriptionLabel.text = text
+    }
+    
+    func setupNormalPrice(_ text: String) {
+        priceStackView.setupNormalPriceLabel(text)
+    }
+    
+    func setupEventPrice(_ text: String) {
+        priceStackView.setupEventPriceLabel(text)
+    }
+    
+    func setupEventBadge(_ text: String) {
+        eventStackView.setupEventPriceLabel(text)
+    }
+    
+    func setupLaunchingBadge(_ text: String) {
+        eventStackView.setupLaunchingPriceLabel(text)
+    }
 }
 
 //MARK: -Setup && Cofiguration

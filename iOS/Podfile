@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'sideDish' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for sideDish
+  pod 'RealmSwift'
+  pod 'Alamofire', '~> 5.1'
+
+  target 'sideDishTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'sideDishUITests' do
+    # Pods for testing
+  end
+
+end

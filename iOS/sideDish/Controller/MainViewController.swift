@@ -10,7 +10,7 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    private var headerOfCollectionView: CollectionViewHeader = {
+    private lazy var headerOfCollectionView: CollectionViewHeader = {
         let header = CollectionViewHeader(frame: .zero)
         return header
     }()
@@ -53,14 +53,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.foodCell, for: indexPath) as? FoodCell else { return UICollectionViewCell() }
         //Start TestCode
-        let attributedText = PriceStackView.convertToNSAttributedString(from: "7,880원")
-        cell.foodImageView.image = UIImage(named: "side")
-        cell.foodInfoStackView.foodNameLabel.text = "[마샐미디쉬] 매콤마늘쫑 해산물볶음 180G"
-        cell.foodInfoStackView.foodDescriptionLabel.text = "탱글탱글한 새우와 오징어를 .."
-        cell.foodInfoStackView.priceStackView.normalPriceLabel.text = "6,210원"
-        cell.foodInfoStackView.priceStackView.eventPriceLabel?.attributedText = attributedText
-        cell.foodInfoStackView.eventStackView.eventPriceLabel?.text = "이벤트 특가"
-        cell.foodInfoStackView.eventStackView.launchingPriceLabel?.text = "런칭특가"
+        cell.setupFoodImage(UIImage(named: "side") ?? UIImage())
+        cell.setupFoodName("[마샐미디쉬] 매콤마늘쫑 해산물볶음 180G")
+        cell.setupFoodDescription("탱글탱글한 새우와 오징어를 ..")
+        cell.setupNormalPrice("6,210원")
+        cell.setupEventPrice("9,999원")
+        cell.setupEventBadge("이벤트특가")
+        cell.setupLaunchingBadge("론칭특가")
         //End TestCode
         return cell
     }
@@ -87,15 +86,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         {
             if indexPath.section == 0
             {
-                header.headerLabel.text = HeaderInfo.main
+                header.setupHeaderLabel(HeaderInfo.main)
             }
             else if indexPath.section == 1
             {
-                header.headerLabel.text = HeaderInfo.soup
+                header.setupHeaderLabel(HeaderInfo.soup)
             }
             else
             {
-                header.headerLabel.text = HeaderInfo.side
+                header.setupHeaderLabel(HeaderInfo.side) 
             }
         }
         return header
