@@ -3,16 +3,16 @@ import Alamofire
 
 class NetworkManager {
     
-    static func getSideDishesInfo(_ url: String) {
-        AF.request(url)
+    static func getSideDishesInfo(_ url: String ) {
+        AF.request(url, method: .get)
             .validate(statusCode: 200..<300)
             .responseDecodable(of: SideDish.self) { response in
-                switch response.result {
-                case .success(let data):
-                    print(data)
-                case .failure(let error):
-                    print(error.localizedDescription)
+                
+                if let error = response.error {
+                    print(error)
                 }
+                
+                print(response.value)
             }
     }
 }
