@@ -2,6 +2,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    private var foodManager = SideDishManager()
+    
     private var collectionViewDelegate: CollectionViewDelegate = {
        let delegate = CollectionViewDelegate()
         return delegate
@@ -28,6 +30,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainCollectionView()
+        getSideDishDataFromNetwork()
+    }
+    
+    private func getSideDishDataFromNetwork() {
+        NetworkManager.getSideDishesInfo(SideDishInfo.main) { [self] data in
+            foodManager.append(dish: data)
+        }
     }
 }
 
@@ -51,5 +60,20 @@ private extension MainViewController {
         mainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         mainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    }
+}
+
+//MARK: -AddNotificationObserver
+private extension MainViewController {
+    
+    private func addNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(cellTapped(_:)), name: .cellTapped, object: nil)
+    }
+    
+    @objc private func cellTapped(_ notification: Notification) {
+        guard let location = notification.userInfo?[NotiInfo.cellInfo] as? CGPoint else { return }
+        let indexPath = mainCollectionView.indexPathForItem(at: location)
+        // indexPath로 DataManager에서 터치된 cell의 detail_hash 가져와서 전달하는 코드 구현필요
+        
     }
 }

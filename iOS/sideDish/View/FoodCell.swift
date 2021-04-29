@@ -8,11 +8,13 @@ class FoodCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupFoodCell()
+        setupTapGesture()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupFoodCell()
+        setupTapGesture()
     }
     
     func setupFoodName(_ text:String) {
@@ -69,5 +71,21 @@ private extension FoodCell {
         addSubview(foodInfoStackView)
         foodInfoStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 130).isActive = true
         foodInfoStackView.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
+    }
+}
+
+//MARK: -TapGesture
+
+private extension FoodCell {
+    
+    private func setupTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(cellTapped(_:)))
+        addGestureRecognizer(gesture)
+    }
+    
+    @objc private func cellTapped(_ gesture: UITapGestureRecognizer) {
+        let location = gesture.location(in: self)
+        
+        NotificationCenter.default.post(name: .cellTapped, object: self, userInfo: [NotiInfo.cellInfo:location])
     }
 }

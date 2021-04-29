@@ -1,3 +1,5 @@
+import Foundation
+
 enum CellIdentifier {
     static let foodCell = "foodCell"
     static let foodHeader = "foodHeader"
@@ -14,4 +16,12 @@ enum SideDishInfo {
     static let soup = "http://ec2-13-125-149-111.ap-northeast-2.compute.amazonaws.com:8080/soup"
     static let side = "http://ec2-13-125-149-111.ap-northeast-2.compute.amazonaws.com:8080/side"
     static let test = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/main"
+}
+
+enum NotiInfo {
+    static let cellInfo = "cellInfo"
+}
+
+extension Notification.Name {
+    static let cellTapped = Notification.Name("cellTapped")
 }
