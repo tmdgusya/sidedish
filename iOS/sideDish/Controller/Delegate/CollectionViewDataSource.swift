@@ -2,8 +2,15 @@ import UIKit
 
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
+    private var dataManagerCount: [Int]?
+    
+    func dataCount(_ count: [Int]) {
+        dataManagerCount = count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5 // test code
+        let dataCount = [8, 8, 8] //임시코드 반드시 수정해야 함
+        return dataCount[section]
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

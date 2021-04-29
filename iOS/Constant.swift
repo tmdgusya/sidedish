@@ -15,7 +15,7 @@ enum SideDishInfo {
     static let main = "http://ec2-13-125-149-111.ap-northeast-2.compute.amazonaws.com:8080/main"
     static let soup = "http://ec2-13-125-149-111.ap-northeast-2.compute.amazonaws.com:8080/soup"
     static let side = "http://ec2-13-125-149-111.ap-northeast-2.compute.amazonaws.com:8080/side"
-    static let test = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/main"
+    static let dishLsit = [main, soup, side]
 }
 
 enum NotiInfo {

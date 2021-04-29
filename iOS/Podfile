@@ -8,6 +8,7 @@ target 'sideDish' do
   # Pods for sideDish
   pod 'RealmSwift'
   pod 'Alamofire', '~> 5.1'
+  pod 'RxSwift'
 
   target 'sideDishTests' do
     inherit! :search_paths

@@ -30,6 +30,7 @@
 		71A833DD262FE5D50060C4B4 /* PriceStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A833DC262FE5D50060C4B4 /* PriceStackView.swift */; };
 		71A833E5262FEA3D0060C4B4 /* EventInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A833E4262FEA3D0060C4B4 /* EventInfoStackView.swift */; };
 		71A833EA262FF6130060C4B4 /* EventInfoBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A833E9262FF6130060C4B4 /* EventInfoBadge.swift */; };
+		71ABADCC263AB3500030949C /* SideDishManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADCB263AB3500030949C /* SideDishManagerType.swift */; };
 		CFDE524038514906B8412144 /* Pods_sideDishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7F270F509C7B0E7BFC5BBE /* Pods_sideDishTests.framework */; };
 		EBE10E6505ED5BDB492FBD80 /* Pods_sideDish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B0A801F57EE64625EB44B8 /* Pods_sideDish.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		71A833DC262FE5D50060C4B4 /* PriceStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceStackView.swift; sourceTree = "<group>"; };
 		71A833E4262FEA3D0060C4B4 /* EventInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoStackView.swift; sourceTree = "<group>"; };
 		71A833E9262FF6130060C4B4 /* EventInfoBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoBadge.swift; sourceTree = "<group>"; };
+		71ABADCB263AB3500030949C /* SideDishManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishManagerType.swift; sourceTree = "<group>"; };
 		7A56C1453F792634D4C7CC9D /* Pods-sideDish-sideDishUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish-sideDishUITests.debug.xcconfig"; path = "Target Support Files/Pods-sideDish-sideDishUITests/Pods-sideDish-sideDishUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91345CE5A9D597B89FEB1CF4 /* Pods_sideDish_sideDishUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sideDish_sideDishUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06C4F1773A23E05FBC94D38 /* Pods-sideDish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sideDish.release.xcconfig"; path = "Target Support Files/Pods-sideDish/Pods-sideDish.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,7 +226,9 @@
 		719CD32F263A4E0800318D7F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				719CD33F263A74A800318D7F /* SideDishManager.swift */,
 				719CD330263A4E1400318D7F /* NetworkManager.swift */,
+				71ABADCB263AB3500030949C /* SideDishManagerType.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -234,7 +238,6 @@
 			children = (
 				719CD333263A5AD700318D7F /* SideDish.swift */,
 				719CD33D263A6D8800318D7F /* SideDishes.swift */,
-				719CD33F263A74A800318D7F /* SideDishManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				719CD331263A4E1400318D7F /* NetworkManager.swift in Sources */,
 				719B37F7262E7AF900107FE6 /* FoodCell.swift in Sources */,
 				719CD337263A5E5100318D7F /* CollectionViewDelegate.swift in Sources */,
+				71ABADCC263AB3500030949C /* SideDishManagerType.swift in Sources */,
 				719B37B5262E781C00107FE6 /* SceneDelegate.swift in Sources */,
 				719B37EF262E7A9F00107FE6 /* FoodInfoStackView.swift in Sources */,
 				719B37FC262E7BFA00107FE6 /* Constant.swift in Sources */,

@@ -31,11 +31,16 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setupMainCollectionView()
         getSideDishDataFromNetwork()
+        addNotificationObserver()
     }
     
     private func getSideDishDataFromNetwork() {
-        NetworkManager.getSideDishesInfo(SideDishInfo.main) { [self] data in
-            foodManager.append(dish: data)
+        SideDishInfo.dishLsit.forEach { eachDish in
+            NetworkManager.getSideDishesInfo(eachDish) { data in
+                self.foodManager.append(dish: data)
+                self.collectionViewDataSource.dataCount(self.foodManager.getDataCount())
+                self.mainCollectionView.reloadData()
+            }
         }
     }
 }
